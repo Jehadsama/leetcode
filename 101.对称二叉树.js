@@ -18,24 +18,21 @@
  * @return {boolean}
  */
 var isSymmetric = function (root) {
-  if (!root) {
-    return true;
-  }
 
   const f = (left, right) => {
-    if ((!left && right) || (left && !right)) {
-      return false;
-    }
-
     if (!left && !right) {
       return true;
     }
+    if (!left || !right) {
+      return false;
+    }
+
     if (left.val !== right.val) {
       return false;
     }
     return f(left.left, right.right) && f(left.right, right.left);
   };
 
-  return f(root.left, root.right);
+  return f(root, root);
 };
 // @lc code=end
