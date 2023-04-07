@@ -30,3 +30,8 @@ var singleNumber = function (nums) {
   return target;
 };
 // @lc code=end
+
+// 解题思路： 异或运算
+// 1.  a ^ a = 0
+// 2.  a ^ 0 = a
+// 3.  a ^ b ^ a = (a ^ a) ^ b = 0 ^ b = b
