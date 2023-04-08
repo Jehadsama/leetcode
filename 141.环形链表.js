@@ -31,6 +31,10 @@ var hasCycle = function (head) {
   //   }
   //   return false;
 
+  if (!head) {
+    return false;
+  }
+
   let slow = head;
   let fast = head;
 
