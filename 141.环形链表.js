@@ -13,24 +13,28 @@
  * }
  */
 
-/**
+/** 解法1
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+// var hasCycle = function (head) {
+//   const m = [];
+//   let n = head;
+//   while (n) {
+//     if (m.includes(n)) {
+//       return true;
+//     }
+//     m.push(n);
+//     n = n.next;
+//   }
+//   return false;
+// };
+
+/** 解法2
  * @param {ListNode} head
  * @return {boolean}
  */
 var hasCycle = function (head) {
-  //   const m = {};
-
-  //   let n = head;
-
-  //   while (n) {
-  //     if (m[n.val]) {
-  //       return true;
-  //     }
-  //     m[n.val] = true;
-  //     n = n.next;
-  //   }
-  //   return false;
-
   if (!head) {
     return false;
   }
