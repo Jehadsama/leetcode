@@ -11,7 +11,11 @@
  */
 var longestPalindrome = function (s) {
   const getPalindrome = (str, left, right) => {
-    while (left >= 0 && right < str.length && str[left] === str[right]) {
+    while (
+      left >= 0 &&
+      right < str.length &&
+      s.charAt(left) == s.charAt(right)
+    ) {
       left--;
       right++;
     }
