@@ -14,7 +14,7 @@ var trap = function (height) {
 
   let len = height.length;
 
-  if (len === 0) {
+  if (len < 3) {
     return 0;
   }
 
