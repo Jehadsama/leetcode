@@ -12,51 +12,48 @@
 var spiralOrder = function (matrix) {
   const rows = matrix.length;
   const lines = matrix[0].length;
-
   if (rows + lines === 0) return [];
 
   const total = rows * lines;
-  //   const directions = ['right', 'down', 'left', 'up'];
-  let direction = 'right';
   const record = {};
   const results = [];
+  const directions = ['right', 'down', 'left', 'up'];
+  let directionIndex = 0;
   let i = 0;
   let j = 0;
+
   while (results.length != total) {
     if (!record[`${i},${j}`]) {
       results.push(matrix[i][j]);
       record[`${i},${j}`] = true;
     }
 
-    if (direction === 'right') {
+    if (directions[directionIndex] === 'right') {
       if (j < lines - 1 && !record[`${i},${j + 1}`]) {
         j++;
       } else {
-        direction = 'down';
+        directionIndex = (directionIndex + 1) % 4;
       }
     }
-
-    if (direction === 'down') {
+    if (directions[directionIndex] === 'down') {
       if (i < rows - 1 && !record[`${i + 1},${j}`]) {
         i++;
       } else {
-        direction = 'left';
+        directionIndex = (directionIndex + 1) % 4;
       }
     }
-
-    if (direction === 'left') {
+    if (directions[directionIndex] === 'left') {
       if (j > 0 && !record[`${i},${j - 1}`]) {
         j--;
       } else {
-        direction = 'up';
+        directionIndex = (directionIndex + 1) % 4;
       }
     }
-
-    if (direction === 'up') {
+    if (directions[directionIndex] === 'up') {
       if (i > 0 && !record[`${i - 1},${j}`]) {
         i--;
       } else {
-        direction = 'right';
+        directionIndex = (directionIndex + 1) % 4;
       }
     }
   }
