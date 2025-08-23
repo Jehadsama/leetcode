@@ -1,3 +1,6 @@
+// 冒泡排序（Bubble Sort）基本思想：
+// 通过相邻元素的比较与交换，将较大的元素逐步「冒泡」到数组末尾，较小的元素自然「下沉」到数组开头。
+
 function bubbleSort(arr) {
   let n = arr.length;
 
