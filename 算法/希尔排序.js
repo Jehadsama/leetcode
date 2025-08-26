@@ -9,19 +9,16 @@ function shellSort(arr) {
       let temp = arr[i];
       let j = i;
 
-      while (j >= gap) {
-        if (arr[j - gap] > temp) {
-          arr[j] = arr[j - gap];
-          j -= gap;
-        }
+      while (j >= gap && arr[j - gap] > temp) {
+        arr[j] = arr[j - gap];
+        j -= gap;
       }
       arr[j] = temp;
     }
-
     gap = Math.floor(gap / 2);
   }
 
   return arr;
 }
 
-console.log(shellSort([3, 2, 1]));
+console.log(shellSort([7, 2, 6, 8, 0, 4, 1, 5, 9, 3]));
